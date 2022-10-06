@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Garage Manager - Modification</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="row col card shadow mx-auto my-5">
+        <div class="col-10 card shadow mx-auto mt-3">
+            <div class="card-header text-center bg-dark text-light mt-2">
+                <h3>MODIFICATION D'UNE VOITURE</h3>
+            </div>
+            <div class="card-content mt-3">
+                <% if (erreurs.length > 0) { %>
+                    <div id="erreur" class="alert alert-danger mt-3">
+                        <% erreurs.forEach((erreur) => { %>
+                            <%= erreur %><br>
+                        <% }); %>
+                    </div>
+                    <% } %> 
+                <form class="card-body" id="edit-car-form" method="post" action="/car/edit/id">
+                    <div class="mb-3">
+                        <label for="brandName" class="form-label">Marque</label>
+                        <input type="text" class="form-control" name="brandName" id="brandName" placeholder="Nom de la marque">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="modelName" class="form-label">Model</label>
+                        <input type="text" class="form-control" name="modelName" id="modelName" placeholder="Nom du model">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="modelEnergy" class="form-label">Energie</label>
+                        <input type="text" class="form-control" name="modelEnergy" id="modelEnergy" placeholder="Prix de la voiture">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="modelPrice" class="form-label">Prix</label>
+                        <input type="text" class="form-control" name="modelPrice" id="modelPrice" placeholder="Prix de la voiture">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dateBuy" class="form-label">Date d'achat</label>
+                        <br>
+                        <input type="date" name="dateBuy" id="dateBuy">
+                    </div>
+
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" id="edit-car-submit" class="btn btn-dark btn-lg btn-block">MODIFIER</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
